@@ -1,0 +1,18 @@
+<h1>This is the idea show page</h1>
+<br>
+<h2><%= @idea.title  %></h2>
+<br>
+<p><%= @idea.body  %></p>
+<p>Submitted by <%= @idea.user.try(:username) %></p>
+
+<% if (can? :edit, @idea) %>
+<%= link_to 'Edit', edit_idea_path(@idea) %>
+<% end %>
+
+<% if (can? :destroy, @idea) %>
+<%= link_to 'Delete', idea_path(@idea),
+                                    method: :delete,
+                                    data: { confirm: 'really?'}  %>
+<% end %>
+
+<br>

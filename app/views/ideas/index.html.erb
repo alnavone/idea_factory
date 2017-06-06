@@ -1,0 +1,10 @@
+<h1>This is the Ideas index page</h1>
+
+<%= link_to('Submit Your Idea', new_idea_path)  %>
+
+<hr>
+
+<% @ideas.each do |idea|  %>
+<p><%= link_to idea.title, idea_path(idea)  %></p>
+
+<% end %>
