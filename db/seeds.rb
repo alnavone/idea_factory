@@ -22,7 +22,7 @@ users = User.create([
 
 10.times do
   Idea.create title: Faker::App.name,
-                  body:  Faker::StarWars.quote
+                  body:  Faker::Hipster.paragraph(4, false, 4)
 end
 1.times do
   User.create username: 'bren',

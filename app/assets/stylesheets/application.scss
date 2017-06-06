@@ -1,5 +1,8 @@
 @import "bootstrap";
 
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -16,11 +19,26 @@
 
  */
 body {
+  background-image: url("factoryfloor10.jpg");
+  background-repeat: repeat-y;
 
+  font-family: 'Raleway', sans-serif;
+}
+.front-jumbo {
+  background-color: #ECE5B9;
+  text-align: center;
+}
+.container {
+  background-color: #ECE5B9;
+  max-width: 70%;
+  margin-top: 100px;
+  border-radius: 20px;
+  padding: 50px;
+  border: 10px solid white;
 }
 
 div {
-  border: thin red solid;
+  // border: thin red solid;
 }
 .right-head {
 padding-top: 50px;
@@ -29,7 +47,29 @@ padding-top: 50px;
 .logo {
   padding-top: 25px;
 }
+.idea-box {
+  box-shadow: 5px 5px gray;
+  width: 100px;
+  height: 50px;
+  text-align: center;
+  padding-top: 10px;
+  margin-top: 20px;
+  margin-left: 40px;
+  border: thin solid black;
+  border-radius: 5px;
+}
+.inner-idea-box {
+  box-shadow: 5px 5px gray;
+  width: 60px;
+  height: 25px;
+  text-align: center;
 
+  border: thin solid black;
+  border-radius: 5px;
+}
 .logo img {
-
+  padding-left: 20px;
+}
+a {
+  color: #ff5000;
 }

@@ -1,10 +1,49 @@
-<h1>This is the Ideas index page</h1>
-
-<%= link_to('Submit Your Idea', new_idea_path)  %>
-
-<hr>
 
 <% @ideas.each do |idea|  %>
-<p><%= link_to idea.title, idea_path(idea)  %></p>
+<h4><%= link_to idea.title, idea_path(idea)  %></h4>
+<br>
+<p><%= idea.body  %></p>
+<% if (can? :edit, idea) %>
+<%= link_to 'Edit', welcome_index_path %>
+<% end %>
 
+<% if (can? :destroy, idea) %>
+<%= link_to 'Delete', welcome_index_path  %>
+<% end %>
+
+<div class="row">
+  <div class="col-md-5">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="">
+          <%= link_to 'Edit', welcome_index_path %>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="inner-idea-box">
+          Join
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="inner-idea-box">
+          Liked
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-md-7">
+    <div class="row">
+      <div class="col-md-7">
+
+      </div>
+      <div class="col-md-5">
+        Members 5 | Likes 6
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<hr>
 <% end %>

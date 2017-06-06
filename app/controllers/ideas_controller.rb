@@ -1,5 +1,7 @@
 class IdeasController < ApplicationController
   before_action :find_idea, only: [:show, :edit, :update, :destroy]
+  before_action :review_params, only: [:show, :edit, :update, :destroy]
+  # before_action  @reviews = Review.find(params[:id]
   before_action :authenticate_user!, except: [:index, :show]
 
   # before_action :find_question, only: [:show, :edit, :update, :destroy]
@@ -8,10 +10,6 @@ class IdeasController < ApplicationController
     @idea = Idea.new
   end
 
-  # The create action is usually used to handle form submission from the new
-  # action to create a record (question in this case) in the database.
-  # URL: /questions
-  # VERB: POST
   def create
     @idea = Idea.new idea_params
     @idea.user = current_user
@@ -26,7 +24,7 @@ class IdeasController < ApplicationController
 
   def show
     @idea = Idea.find(params[:id])
-    # @ideas = @question.answers.order(created_at: :desc)
+    @review = Review.new
   end
 
   def index
@@ -72,5 +70,9 @@ class IdeasController < ApplicationController
 
   def find_idea
     @idea = Idea.find params[:id]
+  end
+
+  def review_params
+    @reviews = Review.find params[:id]
   end
 end

@@ -12,12 +12,19 @@ post('/contact_submit', { to: 'welcome#submit' })
 
 resources :ideas
 
+resources :ideas do
+  resources :reviews, only: [:show, :new, :create, :edit, :destroy]
+end
+
   resources :sessions, only: [:new, :create, :edit] do
     # when you define a route with 'on: :collection' option, it skips requiring an :id
     delete :destroy, on: :collection
   end
 
   resources :users
+  resources :welcome
+  resources :reviews
+
 
   # resources :ideas do
   #   resources :answers, only: [:create, :destroy]
